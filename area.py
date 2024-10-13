@@ -3,6 +3,7 @@ import cv2
 import re
 from PIL import Image
 import numpy as np
+import pandas as pd
 
 # Initialize PaddleOCR
 def pil_to_cv2(image):
