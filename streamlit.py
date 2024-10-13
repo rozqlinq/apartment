@@ -4,8 +4,6 @@ import numpy as np
 import torch
 import pickle
 from torchvision import transforms
-import os
-import cv2
 
 model = pickle.load(open('apartment_room.pkl', 'rb'))
 
