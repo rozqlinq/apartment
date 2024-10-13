@@ -4,6 +4,8 @@ import numpy as np
 import torch
 import pickle
 from torchvision import transforms
+from utils import apartment_type
+from area import totalArea
 
 model = pickle.load(open('apartment_room.pkl', 'rb'))
 
