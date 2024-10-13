@@ -4,6 +4,9 @@ import re
 from PIL import Image
 
 # Initialize PaddleOCR
+def pil_to_cv2(image):
+    return np.array(image)
+    
 def totalArea(image):
     ocr = PaddleOCR(use_angle_cls=True, lang='en')  # Load the OCR model
     
