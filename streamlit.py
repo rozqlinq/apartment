@@ -36,8 +36,8 @@ st.title("Apartment Floor Plan Analyzer")
 st.write("Upload a floor plan image, and we'll predict the number of rooms and the total area.")
 
 # Upload the image
-uploaded_image = st.file_uploader("Upload an image of the floor plan", type=['png', 'jpg', 'jpeg'], accept_multiple_files=True)
 
+uploaded_files = st.file_uploader("Upload images of floor plans", type=['png', 'jpg', 'jpeg'], accept_multiple_files=True)
 
 if uploaded_files is not None:
     for uploaded_file in uploaded_files:
