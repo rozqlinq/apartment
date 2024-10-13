@@ -1,8 +1,22 @@
-def apart_type(indices, room_types, live_rooms):
+import numpy as np
+from ultralytics import YOLO
+import os
+import cv2
+
+def apartment_type(result):
+    indxs = list()
+    if len(result.boxes.cls) != 0:
+        for cls in result.boxes.cls:
+            print(cls)
+            indxs.append(int(cls.item()))
+
+    room_types = ['Balcony', 'BalconyDoor', 'BalconyRailing', 'Bathroom', 'Bedroom', 'DiningRoom', 'Garage', 'Kitchen', 'KitchenCountertop', 'Living Room', 'Master Bedroom', 'Office', 'PrayerRoom', 'Staircase', 'StoreRoom', 'StudyRoom', 'Utility', 'Wardrobe', 'balcony-door', 'balcony-railing', 'garage', 'kitchen', 'kitechenCountertop', 'office', 'staircase', 'wardrobe']
+    live_rooms = ['Bedroom', 'DiningRoom', 'Living Room', 'Master Bedroom', 'Office', 'PrayerRoom', 'StudyRoom']
+
     apartment_type = ''
     c=0
 
-    for i in indices:
+    for i in indxs:
         if room_types[i] in live_rooms:
             c += 1
 
@@ -27,4 +41,4 @@ def apart_type(indices, room_types, live_rooms):
     else: 
         apartment_type = 'дворец'
 
-    return apartment_type
+    return apartment_type, c
