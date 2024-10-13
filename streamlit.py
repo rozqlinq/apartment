@@ -2,6 +2,7 @@ import streamlit as st
 from PIL import Image
 import numpy as np
 import torch
+import pickle
 from torchvision import transforms
 
 
