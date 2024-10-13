@@ -57,6 +57,7 @@ st.write("Загрузите изображения планировок ква�
 # Upload the image
 
 uploaded_files = st.file_uploader("Загрузите изображения планировок квартир ниже", type=['png', 'jpg', 'jpeg'], accept_multiple_files=True)
+results = []
 
 if uploaded_files is not None:
     for uploaded_file in uploaded_files:
@@ -69,6 +70,13 @@ if uploaded_files is not None:
         # Make prediction
         apartment, num_rooms, total_area = predict(image)
 
+        results.append({
+            "File Name": uploaded_file.name,
+            "Apartment Type": apartment,
+            "Number of Rooms": num_rooms,
+            "Total Area (sq. units)": total_area
+        })
+
         # Display the results
         st.subheader(f'Результаты для {uploaded_file.name}:')
         st.write(f'Тип квартиры: {apartment}')
@@ -76,3 +84,10 @@ if uploaded_files is not None:
         st.write(f'Общая площадь: {total_area} sq. units')
 
         st.write("---")  # Divider between results for different images
+        
+        if results:
+        df = pd.DataFrame(results)
+        
+        # Display the table
+        st.subheader("Результаты предсказаний")
+        st.dataframe(df)
