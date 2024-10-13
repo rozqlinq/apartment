@@ -99,8 +99,12 @@ if uploaded_files is not None:
     {"Планировка": "Plan_3",  "Настоящая площадь": 80.45},
     {"Планировка": "Plan_4",  "Настоящая площадь": 74.75},
     {"Планировка": "Plan_5",  "Настоящая площадь": 81.95}
+
         
 ]
+        df2 = pd.DataFrame(truedata)
+        st.subheader("Настоящая площадь")
+        st.dataframe(df2)
 
 
 
