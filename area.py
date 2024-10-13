@@ -6,13 +6,11 @@ import numpy as np
 import pandas as pd
 
 # Initialize PaddleOCR
-def pil_to_cv2(image):
-    return np.array(image)
     
 def totalArea(image):
     ocr = PaddleOCR(use_angle_cls=True, lang='en')  # Load the OCR model
     
-    cimage = pil_to_cv2(image)
+    cimage = np.array(image)
     
     gray = cv2.cvtColor(cimage, cv2.COLOR_BGR2GRAY)
     
