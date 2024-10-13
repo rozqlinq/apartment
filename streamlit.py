@@ -22,7 +22,7 @@ def predict(image):
     #image_tensor = preprocess_image(image)
 
     #Pass the image through the model to get predictions
-    result = model(image, iou=0.5, save=True, project="x/", name="check", exist_ok=True)[0]
+    result = model(image, iou=0.5, name="check", exist_ok=True)[0]
     #with torch.no_grad():
          #output = model(image_tensor)
     apartment, num_rooms = apartment_type(result)
