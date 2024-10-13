@@ -35,22 +35,6 @@ def predict(image):
 st.set_page_config(layout='centered')
 st.image('Header.jpg', width=700)
 
-st.markdown("""
-    <style>
-    .stApp {
-        background-color: #f5f5f5;
-    }
-    .title {
-        font-family: 'Verdana';
-        color: #ff6347;
-    }
-    .header {
-        font-family: 'Verdana';
-        color: #4682b4;
-    }
-    </style>
-    """, unsafe_allow_html=True)
-
 st.title("Автоматическое определение количества жилых комнат и общей площади квартиры")
 
 st.write("Загрузите изображения планировок квартир, чтобы определить количество жилых комнат и общей площади:")
