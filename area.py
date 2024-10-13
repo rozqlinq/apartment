@@ -1,7 +1,6 @@
 from paddleocr import PaddleOCR
 import cv2
 import re
-from PIL import Image
 import numpy as np
 import pandas as pd
 
@@ -13,9 +12,6 @@ def totalArea(image):
     cimage = np.array(image)
     
     gray = cv2.cvtColor(cimage, cv2.COLOR_BGR2GRAY)
-    
-    # Apply GaussianBlur to reduce noise and improve text clarity
-    #blurred = cv2.GaussianBlur(gray, (5, 5), 0)
     
     # Apply adaptive thresholding to make text stand out
     _, binary_image = cv2.threshold(gray, 150, 255, cv2.THRESH_BINARY)
