@@ -59,6 +59,8 @@ pandas==2.2.3
 parso==0.8.4
 pexpect==4.9.0
 pillow==10.2.0
+paddleocr == 2.8.1
+paddlepaddle == 2.6.2
 platformdirs==4.3.6
 prompt_toolkit==3.0.48
 protobuf==4.25.5
