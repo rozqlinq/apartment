@@ -50,13 +50,13 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-st.title("Apartment Floor Plan Analyzer")
+st.title("Автоматическое определение количества жилых комнат и общей площади квартиры")
 
-st.write("Upload a floor plan image, and we'll predict the number of rooms and the total area.")
+st.write("Загрузите изображения планировок квартир, чтобы определить количество жилых комнат и общей площади:")
 
 # Upload the image
 
-uploaded_files = st.file_uploader("Upload images of floor plans", type=['png', 'jpg', 'jpeg'], accept_multiple_files=True)
+uploaded_files = st.file_uploader("Загрузите изображения планировок квартир ниже", type=['png', 'jpg', 'jpeg'], accept_multiple_files=True)
 
 if uploaded_files is not None:
     for uploaded_file in uploaded_files:
@@ -64,15 +64,15 @@ if uploaded_files is not None:
         image = Image.open(uploaded_file)
 
         # Display the uploaded image
-        st.image(image, caption=f'Uploaded Floor Plan: {uploaded_file.name}', use_column_width=True)
+        st.image(image, caption=f'Загруженная планировка: {uploaded_file.name}', use_column_width=True)
 
         # Make prediction
         apartment, num_rooms, total_area = predict(image)
 
         # Display the results
-        st.subheader(f'Results for {uploaded_file.name}:')
-        st.write(f'Apartment Type: {apartment}')
-        st.write(f'Number of Living Rooms: {num_rooms}')
-        st.write(f'Total Area: {total_area} sq. units')
+        st.subheader(f'Результаты для {uploaded_file.name}:')
+        st.write(f'Тип квартиры: {apartment}')
+        st.write(f'Количество жилых комнат: {num_rooms}')
+        st.write(f'Общая площадь: {total_area} sq. units')
 
         st.write("---")  # Divider between results for different images
