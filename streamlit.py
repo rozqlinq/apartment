@@ -31,6 +31,23 @@ def predict(image):
     return apartment, num_rooms, total_area
 
 # Streamlit app UI
+
+st.markdown("""
+    <style>
+    .stApp {
+        background-color: #f5f5f5;
+    }
+    .title {
+        font-family: 'Verdana';
+        color: #ff6347;
+    }
+    .header {
+        font-family: 'Verdana';
+        color: #4682b4;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
 st.title("Apartment Floor Plan Analyzer")
 
 st.write("Upload a floor plan image, and we'll predict the number of rooms and the total area.")
