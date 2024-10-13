@@ -86,9 +86,9 @@ if uploaded_files is not None:
 
         st.write("---")  # Divider between results for different images
         
-        if results:
-            df = pd.DataFrame(results)
-            
-            # Display the table
-            st.subheader("Результаты предсказаний")
-            st.dataframe(df)
+    if results:
+        df = pd.DataFrame(results)
+        
+        # Display the table
+        st.subheader("Результаты предсказаний")
+        st.dataframe(df)
