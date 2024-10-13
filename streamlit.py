@@ -72,10 +72,10 @@ if uploaded_files is not None:
         apartment, num_rooms, total_area = predict(image)
 
         results.append({
-            "File Name": uploaded_file.name,
-            "Apartment Type": apartment,
-            "Number of Rooms": num_rooms,
-            "Total Area (sq. units)": total_area
+            "Планировка": uploaded_file.name,
+            "Вид квартиры": apartment,
+            "Количество комнат": num_rooms,
+            "Общая площадь (м2)": total_area
         })
 
         # Display the results
@@ -92,3 +92,15 @@ if uploaded_files is not None:
         # Display the table
         st.subheader("Результаты предсказаний")
         st.dataframe(df)
+        
+        truedata = [
+    {"Планировка": "Plan_1", "Настоящая площадь": 42.02 },
+    {"Планировка": "Plan_2",  "Настоящая площадь": 59.67 },
+    {"Планировка": "Plan_3",  "Настоящая площадь": 80.45}
+    {"Планировка": "Plan_4",  "Настоящая площадь": 74.75}
+    {"Планировка": "Plan_5",  "Настоящая площадь": 81.95}
+        
+]
+
+
+
