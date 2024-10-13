@@ -12,16 +12,15 @@ def pil_to_cv2(image):
 def totalArea(image):
     ocr = PaddleOCR(use_angle_cls=True, lang='en')  # Load the OCR model
     
-    image = pil_to_cv2(image)
+    cimage = pil_to_cv2(image)
     
-    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    gray = cv2.cvtColor(cimage, cv2.COLOR_BGR2GRAY)
     
     # Apply GaussianBlur to reduce noise and improve text clarity
-    blurred = cv2.GaussianBlur(gray, (5, 5), 0)
+    #blurred = cv2.GaussianBlur(gray, (5, 5), 0)
     
     # Apply adaptive thresholding to make text stand out
-    _, binary_image = cv2.threshold(blurred, 128, 255,
-                                         cv2.THRESH_BINARY)
+    _, binary_image = cv2.threshold(gray, 150, 255, cv2.THRESH_BINARY)
     
     # Resize the image for better OCR accuracy (if the image is too small)
     height, width = binary_image.shape
