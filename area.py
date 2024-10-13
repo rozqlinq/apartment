@@ -20,7 +20,7 @@ def totalArea(image):
     blurred = cv2.GaussianBlur(gray, (5, 5), 0)
     
     # Apply adaptive thresholding to make text stand out
-    binary_image = cv2.adaptiveThreshold(blurred, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
+    binary_image = cv2.adaptiveThreshold(blurred, 128, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
                                          cv2.THRESH_BINARY, 11, 2)
     
     # Resize the image for better OCR accuracy (if the image is too small)
