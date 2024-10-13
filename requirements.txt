@@ -62,6 +62,7 @@ pillow==10.2.0
 opencv_contrib_python==4.10.0.84
 opencv_python==4.10.0.84
 paddleocr==2.8.1
+paddlepaddle==2.6.2
 platformdirs==4.3.6
 prompt_toolkit==3.0.48
 protobuf==4.25.5
