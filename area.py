@@ -1,10 +1,13 @@
 from paddleocr import PaddleOCR
 import cv2
 import re
+from PIL import Image
 
 # Initialize PaddleOCR
 def totalArea(image):
     ocr = PaddleOCR(use_angle_cls=True, lang='en')  # Load the OCR model
+    
+    image = pil_to_cv2(image)
     
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     
