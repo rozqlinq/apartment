@@ -46,7 +46,7 @@ if uploaded_files is not None:
         st.image(image, caption=f'Uploaded Floor Plan: {uploaded_file.name}', use_column_width=True)
 
         # Make prediction
-        num_rooms, total_area = predict_room_and_area(image)
+        apartment, num_rooms, total_area = predict(image)
 
         # Display the results
         st.subheader(f'Results for {uploaded_file.name}:')
