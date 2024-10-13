@@ -26,7 +26,7 @@ def predict(image):
     #with torch.no_grad():
          #output = model(image_tensor)
     apartment, num_rooms = apartment_type(result)
-    total area = totalArea(image)
+    total_area = totalArea(image)
     
     return apartment, num_rooms, total_area
 
