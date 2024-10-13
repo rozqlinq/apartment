@@ -31,6 +31,8 @@ def predict(image):
     return apartment, num_rooms, total_area
 
 # Streamlit app UI
+st.set_page_config(layout='centered')
+st.image('Header.jpg', width=700)
 
 st.markdown("""
     <style>
