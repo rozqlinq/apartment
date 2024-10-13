@@ -1,6 +1,5 @@
 import numpy as np
 import os
-import cv2
 
 def apartment_type(result):
     indxs = list()
