@@ -3,10 +3,9 @@ from PIL import Image
 import numpy as np
 import torch
 from torchvision import transforms
-from ultralytics import YOLO
 
 
-model = YOLO('best.pt')
+model = pickle.load(open('apartment_room.pkl', 'rb'))
 
 # Define image transformations if needed
 def preprocess_image(image):
